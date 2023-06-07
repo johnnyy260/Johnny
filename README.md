@@ -23,9 +23,13 @@ Each row consists of 4 tab-separated columns, representing an interaction betwee
 
 
 ## Training Models
-From the unzipped folder, run the following file to start training an NCF model.
+From the unzipped folder, run the following file to start training an NCF model and predict the recommendations for each user.
 `train.py`
-In the `get_rec.py` file in the `get_rec` function, you can specify the number of recommendations the model has to predict for each user
+In the `get_rec.py` file in the `get_rec` function, you can specify the number of recommendations the model has to predict for each user.
+
+This `train.py` imports two functions from two different modules, get_rec from get_rec module and get_model from helper module, and defines a new function called main. The main function calls get_model function with the use_recs parameter set to False, which trains a new NCF model. Then it calls get_rec function, which generates recommendations for each user based on the trained model and saves the results in a csv file called recs.csv. 
+
+#### In order to use the pre-trained model with the 100 predictions made for each user, unzip the `scripts` folder.
 
 ## Running Experiment
 For the modified Accent algorithm, run the `experiment.py`. The script will generate counterfactual explanations for each user and save it as a CSV file.
