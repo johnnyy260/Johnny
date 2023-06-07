@@ -38,6 +38,19 @@ For example, when you have ran the file on `di` = 5, rename the following files:
 - accent_50 to accent_50_5
 - accent_100 to accent_100_5
 
+1. `experiment.py`: This is the entry point of the experiment. It defines a list of k values to be used in the experiment and then calls the function generate_cf from get_counterfactual.py to generate counterfactual explanations for each k value using the algorithm specified in the command-line arguments.
+
+2. `get_counterfactual.py`: This script generates counterfactual explanations using the modified Accent algorithm. It initializes the Accent algorithm, checks that the k values are in ascending order, and initializes the results for all k values. It then loads a recommender model and iterates over a set of users to generate explanations for each user. It then writes the results to CSV files, one for each k value.
+
+3. `accent.py`: This script implements the modified Accent algorithm to find counterfactual explanations. Given a user and a list of k values to consider, the find_counterfactual_multiple_k method computes counterfactual explanations and returns them. This function calculates the influence of each training set item on the test loss and then finds the best counterfactual explanation for each k value.
+
+4. `accent_template.py`: This script implements the AccentTemplate class which inherits from the ExplanationAlgorithmTemplate class. It provides a method try_replace which, given a replacement item, attempts to swap the replacement and the recommendation.
+
+5. `helper2.py`: This script provides helper functions used in get_counterfactual.py. The init_all_results function initializes a list of dictionaries to store the results of explanation algorithms for each k value. The append_result function appends the result of an explanation algorithm to the results dataset.
+
+In summary, these scripts work together to run an experiment for generating counterfactual explanations using the modified Accent algorithm for a given list of k values. They then store and display the results. The generated counterfactual explanations provide a way of understanding the behavior of the recommendation algorithms by showing what changes would need to be made to the input to change the outcome (recommendation).
+
+
 ## Visualising the results
 To see which the counterfactual set, number of dropped items, topk and new_topk, run the notebook file `visualise.ipynb`
 
