@@ -10,10 +10,11 @@ To use this code, the following python version is required:
 
 Use the following code in Anaconda to create the environment:
 `conda env create --file env.yml`
+After that, activate the environment using `conda activate myenvii`
 After that, manually install the following package in the new environment:
-`pip install tensorflow-intel`
+`pip install tensorflow-intel` Note: ignore the error after installing the tensorflow-intel package
 
-Note: ignore the error after installing the tensorflow-intel package
+
 
 ## Dataset
 We use the popular MovieLens 100K dataset (https://grouplens.org/datasets/movielens/100k/), which contains 100K ratings on a 1 − 5 scale by 943 users on 1682 movies.
