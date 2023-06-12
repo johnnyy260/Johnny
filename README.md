@@ -63,5 +63,5 @@ In summary, these scripts work together to run an experiment for generating coun
 
 
 ## Visualising the results
-To see which the counterfactual set, number of dropped items, topk and new_topk, run the notebook file `visualise.ipynb`
+To see which the counterfactual set, number of dropped items, topk and new_topk, follow the steps in the notebook file `visualise.ipynb`
 
